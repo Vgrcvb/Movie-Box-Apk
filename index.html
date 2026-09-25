@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Downloader Mini App</title>
+
+    <!-- ১. Telegram WebApp SDK Script (এটি যুক্ত করা বাধ্যতামূলক) -->
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1c1c1e;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+        }
+        .container {
+            background-color: #2c2c2e;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            max-width: 380px;
+            margin: auto;
+        }
+        h2 { color: #f5a623; margin-bottom: 10px; }
+        p { color: #cccccc; font-size: 14px; }
+        .btn {
+            background-color: #f5a623;
+            color: #000000;
+            padding: 14px;
+            border: none;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 15px;
+            transition: 0.3s;
+        }
+        .btn:hover { background-color: #e09216; }
+        .download-btn {
+            background-color: #34c759;
+            color: #ffffff;
+            display: none;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Mod APK File Downloader</h2>
+    <p>ফাইলটি আনলক করতে নিচের বাটনে ক্লিক করে বিজ্ঞাপনটি দেখুন।</p>
+    
+    <!-- Step 1: Monetag Ad Button -->
+    <button class="btn" id="adBtn" onclick="watchAd()">১. Watch Ad & Unlock Link</button>
+
+    <!-- Step 2: Main Download Button (Hidden Initially) -->
+    <a id="downloadLink" href="https://drive.google.com/file/d/1TpE2g4JB5i9199zhltgsOb5c7Lk1C1Ws/view?usp=drivesdk" target="_blank" style="text-decoration: none;">
+        <button class="btn download-btn" id="downloadBtn">২. Download APK Now</button>
+    </a>
+</div>
+
+<script>
+    // Telegram Web App Initialize
+    let tg = window.Telegram.WebApp;
+    tg.expand(); // অ্যাপটি টেলিগ্রামে ফুলস্ক্রিন করবে
+
+    function watchAd() {
+        // ১. Monetag SmartLink/Direct Link নতুন ট্যাবে খুলবে
+        window.open("https://omg10.com/4/11884742", "_blank");
+
+        // ২. ৩ সেকেন্ড পর মূল ডাউনলোড বোতামটি দৃশ্যমান হবে
+        setTimeout(function() {
+            document.getElementById("adBtn").style.display = "none";
+            document.getElementById("downloadBtn").style.display = "block";
+        }, 10000);
+    }
+</script>
+
+</body>
+</html>
